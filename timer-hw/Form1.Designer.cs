@@ -37,9 +37,9 @@
             resumeBtn = new Button();
             timerRaButton = new RadioButton();
             stopwatchRaButton = new RadioButton();
-            comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox3 = new ComboBox();
+            comboBox1 = new ComboBox();
             label1 = new Label();
             label2 = new Label();
             SuspendLayout();
@@ -124,20 +124,11 @@
             stopwatchRaButton.UseVisualStyleBackColor = true;
             stopwatchRaButton.CheckedChanged += stopwatchRaButton_CheckedChanged;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" });
-            comboBox1.Location = new Point(149, 141);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(36, 23);
-            comboBox1.TabIndex = 6;
-            // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" });
-            comboBox2.Location = new Point(207, 141);
+            comboBox2.Location = new Point(149, 141);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(36, 23);
             comboBox2.TabIndex = 6;
@@ -145,11 +136,20 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" });
-            comboBox3.Location = new Point(91, 141);
+            comboBox3.Items.AddRange(new object[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" });
+            comboBox3.Location = new Point(207, 141);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(36, 23);
             comboBox3.TabIndex = 6;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" });
+            comboBox1.Location = new Point(91, 141);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(36, 23);
+            comboBox1.TabIndex = 6;
             // 
             // label1
             // 
@@ -176,9 +176,9 @@
             ClientSize = new Size(525, 272);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(comboBox1);
             Controls.Add(comboBox3);
             Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
             Controls.Add(stopwatchRaButton);
             Controls.Add(timerRaButton);
             Controls.Add(resumeBtn);
@@ -210,9 +210,9 @@
         private Button resumeBtn;
         private RadioButton timerRaButton;
         private RadioButton stopwatchRaButton;
-        private ComboBox comboBox1;
         private ComboBox comboBox2;
         private ComboBox comboBox3;
+        private ComboBox comboBox1;
         private Label label1;
     }
 }

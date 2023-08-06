@@ -11,6 +11,10 @@ namespace timer_hw
         public Form1()
         {
             InitializeComponent();
+
+            this.Text = "Timer and Stopwatch";
+
+            startBtn.Enabled = true;
             stopwatchRaButton.Checked = true;
             stopBtn.Enabled = false;
             resumeBtn.Enabled = false;
@@ -27,7 +31,7 @@ namespace timer_hw
                 comboBox2.Enabled = false;
                 comboBox3.Enabled = false;
             }
-            
+
             stopwatchRaButton.Enabled = false;
             timerRaButton.Enabled = false;
             startBtn.Enabled = false;
@@ -55,13 +59,13 @@ namespace timer_hw
         {
             timer1.Stop();
 
-            h = 0; 
+            h = 0;
             m = 0;
             s = 0;
 
             saatLabel.Text = String.Format("{0:D2}", h) + ":" + String.Format("{0:D2}", m) + ":" + String.Format("{0:D2}", s);
 
-            if (timerRaButton.Checked) 
+            if (timerRaButton.Checked)
             {
                 comboBox2.Text = comboBox2.Items[0].ToString();
                 comboBox3.Text = comboBox3.Items[0].ToString();
@@ -70,12 +74,14 @@ namespace timer_hw
                 comboBox1.Enabled = true;
                 comboBox2.Enabled = true;
                 comboBox3.Enabled = true;
+
+
             }
 
             stopwatchRaButton.Enabled = true;
             timerRaButton.Enabled = true;
-            
-            startBtn.Enabled = true;
+
+            if (stopwatchRaButton.Checked) startBtn.Enabled = true;
             stopBtn.Enabled = false;
             resumeBtn.Enabled = false;
             resetBtn.Enabled = false;
@@ -104,7 +110,7 @@ namespace timer_hw
 
                 saatLabel.Text = String.Format("{0:D2}", h) + ":" + String.Format("{0:D2}", m) + ":" + String.Format("{0:D2}", s);
             }
-            else if(!timeIsUp) 
+            else if (!timeIsUp)
             {
                 if (timer)
                 {
@@ -118,12 +124,13 @@ namespace timer_hw
                 saatLabel.Text = String.Format("{0:D2}", h) + ":" + String.Format("{0:D2}", m) + ":" + String.Format("{0:D2}", s);
 
                 s--;
+
                 if (m == 0 && s == 0 && h == 0)
                 {
                     timeIsUp = true;
                 }
 
-                if (s == 0)
+                if (s <= 0)
                 {
                     s = 59;
                     m--;
@@ -131,56 +138,53 @@ namespace timer_hw
                 if (m < 0)
                 {
                     m = 59;
-                   if(h!=0) h--;
+                    if (h != 0) h--;
                 }
             }
             else
             {
-                h = 0;
-                m = 0;
-                s = 0;
+             h = 0;
+             m = 0;
+             s = 0;
 
-                saatLabel.Text = String.Format("{0:D2}", h) + ":" + String.Format("{0:D2}", m) + ":" + String.Format("{0:D2}", s);
+             saatLabel.Text = String.Format("{0:D2}", h) + ":" + String.Format("{0:D2}", m) + ":" + String.Format("{0:D2}", s);
+ 
+             comboBox2.Text = comboBox2.Items[0].ToString();
+             comboBox3.Text = comboBox3.Items[0].ToString();
+             comboBox1.Text = comboBox1.Items[0].ToString();
 
-                if (timerRaButton.Checked)
-                {
-                    comboBox2.Text = comboBox2.Items[0].ToString();
-                    comboBox3.Text = comboBox3.Items[0].ToString();
-                    comboBox1.Text = comboBox1.Items[0].ToString();
+             comboBox1.Enabled = true;
+             comboBox2.Enabled = true;
+             comboBox3.Enabled = true;    
+                
+             stopwatchRaButton.Enabled = true;
+             timerRaButton.Enabled = true;
 
-                    comboBox1.Enabled = true;
-                    comboBox2.Enabled = true;
-                    comboBox3.Enabled = true;
-                }
+             startBtn.Enabled = false;
+             stopBtn.Enabled = false;
+             resumeBtn.Enabled = false;
+             resetBtn.Enabled = false;
 
-                stopwatchRaButton.Enabled = true;
-                timerRaButton.Enabled = true;
+             timer = true;
+               
+             timeIsUp = false;
 
-                startBtn.Enabled = true;
-                stopBtn.Enabled = false;
-                resumeBtn.Enabled = false;
-                resetBtn.Enabled = false;
+             timer1.Stop();
 
-                if (timerRaButton.Enabled)
-                {
-                    timer = true;
-                }
-
-                timeIsUp = false;
-
-                timer1.Stop();
-
-                MessageBox.Show("Time's up!"); 
+             MessageBox.Show("Time's up!");
             }
+
         }
         private void stopwatchRaButton_CheckedChanged(object sender, EventArgs e)
         {
             if (stopwatchRaButton.Checked)
             {
+                startBtn.Enabled = true;
+
                 comboBox2.Text = comboBox2.Items[0].ToString();
                 comboBox3.Text = comboBox3.Items[0].ToString();
                 comboBox1.Text = comboBox1.Items[0].ToString();
-                
+
                 comboBox2.Enabled = false;
                 comboBox3.Enabled = false;
                 comboBox1.Enabled = false;
@@ -188,11 +192,21 @@ namespace timer_hw
             else if (!stopwatchRaButton.Checked)
             {
                 timer = true;
-
+                startBtn.Enabled = false;
                 comboBox2.Enabled = true;
                 comboBox3.Enabled = true;
                 comboBox1.Enabled = true;
             }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text != "00" || comboBox2.Text != "00" || comboBox3.Text != "00")
+            {
+                startBtn.Enabled = true;
+                resetBtn.Enabled = true;
+            }
+            else if (!stopwatchRaButton.Checked) startBtn.Enabled = false;
         }
     }
 }

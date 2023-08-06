@@ -50,7 +50,7 @@
             saatLabel.BackColor = SystemColors.InactiveCaptionText;
             saatLabel.Font = new Font("Unispace", 32.25F, FontStyle.Bold, GraphicsUnit.Point);
             saatLabel.ForeColor = Color.FromArgb(0, 192, 0);
-            saatLabel.Location = new Point(143, 60);
+            saatLabel.Location = new Point(150, 60);
             saatLabel.Name = "saatLabel";
             saatLabel.Size = new Size(230, 51);
             saatLabel.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             // startBtn
             // 
-            startBtn.Location = new Point(271, 141);
+            startBtn.Location = new Point(286, 141);
             startBtn.Name = "startBtn";
             startBtn.Size = new Size(75, 24);
             startBtn.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // stopBtn
             // 
-            stopBtn.Location = new Point(271, 171);
+            stopBtn.Location = new Point(286, 171);
             stopBtn.Name = "stopBtn";
             stopBtn.Size = new Size(75, 23);
             stopBtn.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             // resetBtn
             // 
-            resetBtn.Location = new Point(352, 171);
+            resetBtn.Location = new Point(367, 171);
             resetBtn.Name = "resetBtn";
             resetBtn.Size = new Size(75, 24);
             resetBtn.TabIndex = 2;
@@ -93,7 +93,7 @@
             // 
             // resumeBtn
             // 
-            resumeBtn.Location = new Point(352, 141);
+            resumeBtn.Location = new Point(367, 141);
             resumeBtn.Name = "resumeBtn";
             resumeBtn.Size = new Size(75, 24);
             resumeBtn.TabIndex = 4;
@@ -115,7 +115,7 @@
             // stopwatchRaButton
             // 
             stopwatchRaButton.AutoSize = true;
-            stopwatchRaButton.Location = new Point(271, 116);
+            stopwatchRaButton.Location = new Point(286, 116);
             stopwatchRaButton.Name = "stopwatchRaButton";
             stopwatchRaButton.Size = new Size(81, 19);
             stopwatchRaButton.TabIndex = 5;
@@ -132,6 +132,7 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(36, 23);
             comboBox2.TabIndex = 6;
+            comboBox2.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // comboBox3
             // 
@@ -141,6 +142,7 @@
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(36, 23);
             comboBox3.TabIndex = 6;
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // comboBox1
             // 
@@ -150,6 +152,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(36, 23);
             comboBox1.TabIndex = 6;
+            comboBox1.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -173,7 +176,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(525, 272);
+            BackColor = SystemColors.ButtonFace;
+            ClientSize = new Size(514, 261);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(comboBox1);
@@ -186,7 +190,11 @@
             Controls.Add(stopBtn);
             Controls.Add(startBtn);
             Controls.Add(saatLabel);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "Form1";
+            ShowIcon = false;
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();

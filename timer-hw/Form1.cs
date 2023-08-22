@@ -12,8 +12,6 @@ namespace timer_hw
         {
             InitializeComponent();
 
-            this.Text = "Timer and Stopwatch";
-
             startBtn.Enabled = true;
             stopwatchRaButton.Checked = true;
             stopBtn.Enabled = false;
@@ -143,35 +141,35 @@ namespace timer_hw
             }
             else
             {
-             h = 0;
-             m = 0;
-             s = 0;
+                h = 0;
+                m = 0;
+                s = 0;
 
-             saatLabel.Text = String.Format("{0:D2}", h) + ":" + String.Format("{0:D2}", m) + ":" + String.Format("{0:D2}", s);
- 
-             comboBox2.Text = comboBox2.Items[0].ToString();
-             comboBox3.Text = comboBox3.Items[0].ToString();
-             comboBox1.Text = comboBox1.Items[0].ToString();
+                saatLabel.Text = String.Format("{0:D2}", h) + ":" + String.Format("{0:D2}", m) + ":" + String.Format("{0:D2}", s);
 
-             comboBox1.Enabled = true;
-             comboBox2.Enabled = true;
-             comboBox3.Enabled = true;    
-                
-             stopwatchRaButton.Enabled = true;
-             timerRaButton.Enabled = true;
+                comboBox2.Text = comboBox2.Items[0].ToString();
+                comboBox3.Text = comboBox3.Items[0].ToString();
+                comboBox1.Text = comboBox1.Items[0].ToString();
 
-             startBtn.Enabled = false;
-             stopBtn.Enabled = false;
-             resumeBtn.Enabled = false;
-             resetBtn.Enabled = false;
+                comboBox1.Enabled = true;
+                comboBox2.Enabled = true;
+                comboBox3.Enabled = true;
 
-             timer = true;
-               
-             timeIsUp = false;
+                stopwatchRaButton.Enabled = true;
+                timerRaButton.Enabled = true;
 
-             timer1.Stop();
+                startBtn.Enabled = false;
+                stopBtn.Enabled = false;
+                resumeBtn.Enabled = false;
+                resetBtn.Enabled = false;
 
-             MessageBox.Show("Time's up!");
+                timer = true;
+
+                timeIsUp = false;
+
+                timer1.Stop();
+
+                MessageBox.Show("Time's up!");
             }
 
         }
